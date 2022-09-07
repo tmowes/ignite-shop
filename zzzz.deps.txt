@@ -1,0 +1,1 @@
+yad @types/node @types/react @types/react-dom @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-airbnb-base eslint-config-next eslint-config-prettier eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-import-helpers eslint-plugin-prettier eslint-plugin-sonarjs prettier typescript
