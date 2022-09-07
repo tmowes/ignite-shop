@@ -14,6 +14,7 @@ export function AppContainer(props: AppContainerProps) {
         <Image src={logoImg} alt="ignite shop logo" />
         <S.IconButton>
           <Handbag size={32} weight="bold" />
+          <S.Badge>0</S.Badge>
         </S.IconButton>
       </S.Header>
       {children}

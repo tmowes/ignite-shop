@@ -1,4 +1,3 @@
-/* eslint-disable global-require */
 import Image from 'next/future/image'
 import { useState } from 'react'
 
@@ -13,18 +12,16 @@ export function ProductContainer(props: ProductContainerProps) {
   const [isInCheckout, setIsInCheckout] = useState(false)
 
   const handlePurchase = async () => {
-    console.log('handlePurchase', data.priceId)
     try {
       setIsInCheckout(true)
       const response = await axios.post('/api/checkout-session', {
         priceId: data.priceId,
       })
-      console.log('response', response)
       const { checkoutUrl } = response.data
       window.location.href = checkoutUrl
     } catch (error) {
       setIsInCheckout(false)
-      console.log('error', error)
+      console.error('HANDLE-PURCHASE-ERROR', error)
     }
   }
 

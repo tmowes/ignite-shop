@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/future/image'
 
 import { useKeenSlider } from 'keen-slider/react'
+import { Handbag } from 'phosphor-react'
 
 import { Arrow } from '../../components/Arrow'
 import { HomeContainerProps } from './types'
@@ -32,13 +33,18 @@ export function HomeContainer(props: HomeContainerProps) {
     <>
       <S.NavSlider>
         <S.Container ref={sliderRef} className="keen-slider">
-          {data.map(({ id, title, price, imageUrl }) => (
+          {data.map(({ id, title, price, imageUrl }, idx) => (
             <Link key={id} href={`/product/${id}`} passHref>
-              <S.Product className="keen-slider__slide">
+              <S.Product className={`keen-slider__slide${currentSlide === idx ? ' active' : ''}`}>
                 <Image src={imageUrl} alt="" width={520} height={480} />
                 <S.Footer>
-                  <S.Title>{title}</S.Title>
-                  <S.Price>{price}</S.Price>
+                  <S.FooterDetails>
+                    <S.Title>{title}</S.Title>
+                    <S.Price>{price}</S.Price>
+                  </S.FooterDetails>
+                  <S.AddToCartButton>
+                    <Handbag weight="bold" size={32} />
+                  </S.AddToCartButton>
                 </S.Footer>
               </S.Product>
             </Link>

@@ -2,7 +2,8 @@ import { styled } from '../../styles'
 
 export const NavSlider = styled('nav', {
   display: 'flex',
-  maxWidth: 'calc(1180px + 4rem)',
+  maxWidth: 'calc(1452px)',
+  // maxWidth: 'calc(1180px + 4rem)',
   minHeight: 656,
   margin: '0 auto',
   position: 'relative',
@@ -55,7 +56,7 @@ export const Product = styled('a', {
   img: {
     objectFit: 'cover',
   },
-  '&:hover': {
+  '&:hover, &.active': {
     footer: {
       transform: 'translateY(0)',
       opacity: 1,
@@ -68,9 +69,9 @@ export const Footer = styled('footer', {
   right: '0.25rem',
   left: '0.25rem',
   bottom: '0.25rem',
-  padding: '2rem',
+  padding: '1rem 2rem 1rem 1rem',
   borderRadius: 6,
-  backgroundColor: 'rgba(0, 0, 0, 0.6)',
+  backgroundColor: 'rgba(32, 32, 36, 0.8)',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
@@ -78,6 +79,22 @@ export const Footer = styled('footer', {
   transform: 'translateY(110%)',
   opacity: 0,
   transition: 'all 0.2s ease-in-out',
+})
+
+export const FooterDetails = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+})
+
+export const AddToCartButton = styled('button', {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  padding: '0.75rem',
+  borderRadius: 6,
+  backgroundColor: '$green500',
+  color: '$white',
 })
 
 export const Title = styled('strong', {
