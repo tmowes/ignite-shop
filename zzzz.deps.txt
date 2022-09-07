@@ -1,1 +1,21 @@
 yad @types/node @types/react @types/react-dom @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-airbnb-base eslint-config-next eslint-config-prettier eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-import-helpers eslint-plugin-prettier eslint-plugin-sonarjs prettier typescript
+
+
+import { styled } from '../styles'
+
+const Button = styled('button', {
+  backgroundColor: '$green500',
+  borderRadius: 4,
+  border: 0,
+  padding: '4px 8px',
+  color: 'white',
+  fontWeight: 'bold',
+  '&:hover': {
+    filter: 'brightness(1.2)',
+    scale: 1.03,
+  },
+  '&:active': {
+    filter: 'brightness(0.9)',
+    scale: 1.01,
+  },
+})

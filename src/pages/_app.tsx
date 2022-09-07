@@ -1,6 +1,15 @@
 import type { AppProps } from 'next/app'
 
-export default function MyApp(props: AppProps) {
+import { AppContainer } from '../containers/AppContainer'
+import { globalStyles } from '../styles/global'
+
+globalStyles()
+
+export default function App(props: AppProps) {
   const { Component, pageProps } = props
-  return <Component {...pageProps} />
+  return (
+    <AppContainer>
+      <Component {...pageProps} />
+    </AppContainer>
+  )
 }
