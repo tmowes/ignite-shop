@@ -1,6 +1,3 @@
-// 20220907064808
-// https://raw.githubusercontent.com/tmowes/doctor-moldes-admin-web/main/.eslintrc.json?token=GHSAT0AAAAAABWAGHSPS2UENO2DS54MVQXMYYYNC3Q
-
 {
   "env": {
     "es2021": true,
@@ -32,9 +29,7 @@
   ],
   "settings": {
     "import/resolver": {
-      "typescript": {
-
-      }
+      "typescript": {}
     }
   },
   "rules": {
