@@ -2,9 +2,8 @@ import { styled } from '../../styles'
 
 export const NavSlider = styled('nav', {
   display: 'flex',
-  maxWidth: 'calc(1452px)',
-  // maxWidth: 'calc(1180px + 4rem)',
-  minHeight: 656,
+  maxWidth: 1452,
+  minHeight: 624,
   margin: '0 auto',
   position: 'relative',
   '.arrow': {
@@ -22,14 +21,16 @@ export const NavSlider = styled('nav', {
 
   '.arrow--left': {
     left: 0,
-    padding: '0 2rem',
-    background: 'linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, $gray900 150%)',
+    paddingLeft: '1.5rem',
+    paddingRight: '3.5rem',
+    background: 'linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, $gray900 120%)',
   },
 
   '.arrow--right': {
     right: 0,
-    padding: '0 2rem',
-    background: 'linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, $gray900 150%)',
+    paddingLeft: '3.5rem',
+    paddingRight: '1.5rem',
+    background: 'linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, $gray900 120%)',
   },
 
   '.arrow--disabled': {
@@ -38,7 +39,7 @@ export const NavSlider = styled('nav', {
 })
 
 export const Container = styled('div', {
-  minHeight: 656,
+  minHeight: 624,
   margin: '0 auto',
   position: 'relative',
 })
@@ -110,7 +111,7 @@ export const Price = styled('span', {
 export const Dots = styled('div', {
   display: 'flex',
   justifyContent: 'center',
-  margin: '1rem auto',
+  margin: '1rem auto 0',
 
   '.dot': {
     border: 'none',

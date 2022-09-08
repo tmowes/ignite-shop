@@ -14,6 +14,7 @@ export const globalStyles = globalCss({
     lineHeight: 1.6,
     '-webkit-font-smoothing': 'antialiased',
     '-moz-osx-font-smoothing': 'grayscale',
+    overflowX: 'hidden',
   },
   'html, body, #next': {
     height: '100%',

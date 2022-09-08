@@ -6,6 +6,7 @@ export type Product = {
   description?: string
   imageUrl: string
   price: string
+  priceNumber: number
   priceId?: string
 }
 
@@ -16,5 +17,5 @@ export type CheckoutInfo = {
   customer: {
     name: string
   }
-  product: Pick<Product, 'title' | 'imageUrl'>
+  products: Pick<Product, 'title' | 'imageUrl'>[]
 }

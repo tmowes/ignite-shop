@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/no-duplicate-string */
 import { styled } from '../../styles'
 
 export const Container = styled('div', {
@@ -30,13 +31,14 @@ export const IconButton = styled('button', {
 
 export const Badge = styled('div', {
   position: 'absolute',
-  top: -7,
-  right: -7,
+  top: -8,
+  right: -8,
   width: 28,
   height: 28,
+  borderRadius: 14,
   backgroundColor: '$green500',
-  borderRadius: '50%',
   border: '3px solid $gray900',
   color: '$white',
-  fontSize: '$md',
+  padding: '0.1rem',
+  fontSize: '$sm',
 })

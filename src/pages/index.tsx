@@ -30,6 +30,8 @@ export const getStaticProps: GetStaticProps = async () => {
       title: product.name,
       imageUrl: product.images[0],
       price: formatCurrency(price.unit_amount / 100),
+      priceNumber: price.unit_amount / 100,
+      priceId: price.id,
     }
   })
 

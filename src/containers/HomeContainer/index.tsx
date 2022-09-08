@@ -5,6 +5,7 @@ import Image from 'next/future/image'
 import { useKeenSlider } from 'keen-slider/react'
 import { Handbag } from 'phosphor-react'
 
+import { useCart } from '../../contexts/CartProvider'
 import { Arrow } from '../../components/Arrow'
 import { HomeContainerProps } from './types'
 import * as S from './styles'
@@ -13,6 +14,8 @@ import 'keen-slider/keen-slider.min.css'
 
 export function HomeContainer(props: HomeContainerProps) {
   const { data } = props
+
+  const { addToCart } = useCart()
   const [loaded, setLoaded] = useState(false)
   const [currentSlide, setCurrentSlide] = useState(1)
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
@@ -33,7 +36,7 @@ export function HomeContainer(props: HomeContainerProps) {
     <>
       <S.NavSlider>
         <S.Container ref={sliderRef} className="keen-slider">
-          {data.map(({ id, title, price, imageUrl }, idx) => (
+          {data.map(({ id, title, price, imageUrl, priceId, priceNumber }, idx) => (
             <Link key={id} href={`/product/${id}`} passHref>
               <S.Product className={`keen-slider__slide${currentSlide === idx ? ' active' : ''}`}>
                 <Image src={imageUrl} alt="" width={520} height={480} />
@@ -42,7 +45,12 @@ export function HomeContainer(props: HomeContainerProps) {
                     <S.Title>{title}</S.Title>
                     <S.Price>{price}</S.Price>
                   </S.FooterDetails>
-                  <S.AddToCartButton>
+                  <S.AddToCartButton
+                    onClick={(e) => {
+                      e.preventDefault()
+                      addToCart({ id, title, price, imageUrl, priceId, priceNumber })
+                    }}
+                  >
                     <Handbag weight="bold" size={32} />
                   </S.AddToCartButton>
                 </S.Footer>

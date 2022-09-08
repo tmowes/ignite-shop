@@ -1,29 +1,12 @@
 import Image from 'next/future/image'
-import { useState } from 'react'
 
-import axios from 'axios'
-
+import { useCart } from '../../contexts/CartProvider'
 import * as S from './styles'
 import { ProductContainerProps } from './types'
 
 export function ProductContainer(props: ProductContainerProps) {
   const { data } = props
-
-  const [isInCheckout, setIsInCheckout] = useState(false)
-
-  const handlePurchase = async () => {
-    try {
-      setIsInCheckout(true)
-      const response = await axios.post('/api/checkout-session', {
-        priceId: data.priceId,
-      })
-      const { checkoutUrl } = response.data
-      window.location.href = checkoutUrl
-    } catch (error) {
-      setIsInCheckout(false)
-      console.error('HANDLE-PURCHASE-ERROR', error)
-    }
-  }
+  const { addToCart } = useCart()
 
   return (
     <S.Container>
@@ -34,9 +17,7 @@ export function ProductContainer(props: ProductContainerProps) {
         <S.Title>{data.title}</S.Title>
         <S.Price>{data.price}</S.Price>
         <S.Description>{data.description}</S.Description>
-        <S.AddToCartButton onClick={handlePurchase} disabled={isInCheckout}>
-          Colocar na sacola
-        </S.AddToCartButton>
+        <S.AddToCartButton onClick={() => addToCart(data)}>Colocar na sacola</S.AddToCartButton>
       </S.RightSide>
     </S.Container>
   )

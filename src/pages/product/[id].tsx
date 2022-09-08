@@ -51,6 +51,7 @@ export const getStaticProps: GetStaticProps<ProductDetailsProps, { id: string }>
     imageUrl: p.images[0],
     description: p.description,
     price: formatCurrency(price.unit_amount / 100),
+    priceNumber: price.unit_amount / 100,
     priceId: price.id,
   }
 
